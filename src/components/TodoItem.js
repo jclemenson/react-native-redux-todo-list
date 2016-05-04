@@ -7,12 +7,8 @@ import React, {
 } from 'react-native';
 
 class Todo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    console.log(`TodoItem.render: ${this.props.text} ${this.props.completed}`)
+    // console.log(`TodoItem.render: ${this.props.text} ${this.props.completed}`)
     return (
       <TouchableHighlight
         onPress={this.props.onPress}
@@ -22,7 +18,6 @@ class Todo extends Component {
     );
   }
 }
-
 
 Todo.propTypes = {
   onPress: PropTypes.func.isRequired,

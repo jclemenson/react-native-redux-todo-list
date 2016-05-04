@@ -1,7 +1,8 @@
 import React, {
   Component,
   ListView,
-  PropTypes
+  PropTypes,
+  StyleSheet
 } from 'react-native';
 
 import TodoItem from './TodoItem'
@@ -28,7 +29,6 @@ class TodoList extends Component {
   }
 
   _renderRow = (rowData) => {
-    // console.log(rowData);
     return (
       <TodoItem
         text={rowData.text}
@@ -38,32 +38,23 @@ class TodoList extends Component {
   }
 
   render() {
-    console.log(`TodoList.render`);
-    console.log(this.props.todos);
-    console.log(this.state.dataSource);
-
+    // console.log(`TodoList.render`);
+    // console.log(this.props.todos);
+    // console.log(this.state.dataSource);
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={this._renderRow}/>
+        renderRow={this._renderRow}
+        style={styles.listView}/>
     );
   }
-
-  // renderHTML() {
-  //   return (
-  //     <ul>
-  //       {todos.map(todo =>
-  //         <Todo
-  //           key={todo.id}
-  //           {...todo}
-  //           onClick={() => onTodoClick(todo.id)}
-  //         />
-  //       )}
-  //     </ul>
-  //   )
-  // }
-
 }
+
+const styles = StyleSheet.create({
+  listView: {
+    flex: 6
+  },
+});
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.shape({

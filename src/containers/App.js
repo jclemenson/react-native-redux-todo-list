@@ -8,8 +8,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import todoApp from '../reducers';
-// import App from '../components/App';
+
 import VisibleTodoList from './VisibleTodoList'
+import AddTodo from './AddTodo'
 
 const initialState = {
   todos: [
@@ -42,6 +43,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <View style={styles.container}>
+          <AddTodo/>
           <VisibleTodoList/>
         </View>
       </Provider>
