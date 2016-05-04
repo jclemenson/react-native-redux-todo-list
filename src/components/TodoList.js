@@ -10,7 +10,7 @@ class TodoList extends Component {
   constructor(props) {
     super(props);
 
-    console.log(`todos = ${this.props.todos}`);
+
 
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 != r2
@@ -21,12 +21,27 @@ class TodoList extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(nextProps.todos)
+    })
+  }
+
   _renderRow = (rowData) => {
-    console.log(rowData);
-    return <TodoItem text={rowData.text} completed={rowData.completed}/>;
+    // console.log(rowData);
+    return (
+      <TodoItem
+        text={rowData.text}
+        completed={rowData.completed}
+        onPress={() => this.props.onTodoPress(rowData.id)}/>
+    );
   }
 
   render() {
+    console.log(`TodoList.render`);
+    console.log(this.props.todos);
+    console.log(this.state.dataSource);
+
     return (
       <ListView
         dataSource={this.state.dataSource}
@@ -56,7 +71,7 @@ TodoList.propTypes = {
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  // onTodoClick: PropTypes.func.isRequired
+  onTodoPress: PropTypes.func.isRequired
 }
 
 module.exports = TodoList;
