@@ -11,8 +11,6 @@ class TodoList extends Component {
   constructor(props) {
     super(props);
 
-
-
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 != r2
     });
@@ -45,7 +43,8 @@ class TodoList extends Component {
       <ListView
         dataSource={this.state.dataSource}
         renderRow={this._renderRow}
-        style={styles.listView}/>
+        style={styles.listView}
+        enableEmptySections={true}/>
     );
   }
 }

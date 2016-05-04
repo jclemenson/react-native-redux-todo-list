@@ -36,9 +36,6 @@ const initialState = {
 let store = createStore(todoApp, initialState);
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   render() {
     return (
