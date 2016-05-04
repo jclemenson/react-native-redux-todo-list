@@ -11,6 +11,7 @@ import todoApp from '../reducers';
 
 import VisibleTodoList from './VisibleTodoList'
 import AddTodo from './AddTodo'
+import Footer from './../components/Footer'
 
 const initialState = {
   todos: [
@@ -45,6 +46,7 @@ class App extends Component {
         <View style={styles.container}>
           <AddTodo/>
           <VisibleTodoList/>
+          <Footer/>
         </View>
       </Provider>
     );
