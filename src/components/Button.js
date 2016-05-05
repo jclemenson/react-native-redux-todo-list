@@ -11,7 +11,7 @@ class Button extends Component {
     return (
       <TouchableHighlight onPress={this.props.onPress}>
         <View style={[styles.button, this.props.style]}>
-          <Text>
+          <Text style={styles.text}>
             {this.props.label}
           </Text>
         </View>
@@ -22,11 +22,16 @@ class Button extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#ffddff',
-    width: 200,
+    backgroundColor: '#ccc',
+    // width: 200,
     padding: 25,
-    borderRadius: 5
+    borderRadius: 5,
+    margin: 2
   },
+  text: {
+    fontSize: 24,
+    textAlign: 'center'
+  }
 });
 
 

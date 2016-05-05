@@ -49,13 +49,19 @@ class AddTodoItem extends Component {
   }
 }
 
+const baseFontSize = 24;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row'
+    // flexDirection: 'row'
   },
   input: {
-    flex: 3
+    fontSize: baseFontSize,
+    // padding: 42,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    flex: 1
   },
   button: {
     flex: 1

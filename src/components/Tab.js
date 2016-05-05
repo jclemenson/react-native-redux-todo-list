@@ -14,13 +14,11 @@ class Tab extends Component {
         title={this.props.name}
         selected={this.props.selected}
         onPress={this.props.onPress}>
-
         <View style={styles.tabContent}>
           <Text style={styles.tabText}>
             {this.props.name}
           </Text>
         </View>
-
       </TabBarIOS.Item>
     );
   }
@@ -31,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  tabeText: {
+  tabText: {
     margin: 50
   }
 });

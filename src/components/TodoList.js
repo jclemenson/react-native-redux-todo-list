@@ -51,7 +51,7 @@ class TodoList extends Component {
 
 const styles = StyleSheet.create({
   listView: {
-    flex: 6
+    flex: 3
   },
 });
 

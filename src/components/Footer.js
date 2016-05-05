@@ -30,7 +30,9 @@ class Footer extends Component {
 
   render() {
     return (
-      <TabBarIOS>
+      <TabBarIOS
+        barTintColor='darkslateblue'
+        tintColor='white'>
         {this._renderTab('All', 'SHOW_ALL')}
         {this._renderTab('Active', 'SHOW_ACTIVE')}
         {this._renderTab('Completed', 'SHOW_COMPLETED')}
