@@ -9,8 +9,8 @@ import React, {
 class Button extends Component {
   render() {
     return (
-      <TouchableHighlight onPress={this.props.onPress}>
-        <View style={[styles.button, this.props.style]}>
+      <TouchableHighlight onPress={this.props.onPress} style={styles.container}>
+        <View style={[styles.button, this.props.style, this.props.selected && styles.selected]}>
           <Text style={styles.text}>
             {this.props.label}
           </Text>
@@ -21,23 +21,29 @@ class Button extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   button: {
     backgroundColor: '#ccc',
-    // width: 200,
-    padding: 25,
+    padding: 15,
     borderRadius: 5,
     margin: 2
   },
   text: {
-    fontSize: 24,
-    textAlign: 'center'
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  selected: {
+    backgroundColor: '#aaa'
   }
 });
 
 
 Button.propTypes = {
   onPress: React.PropTypes.func,
-  label: React.PropTypes.string
+  label: React.PropTypes.string,
+  selected: React.PropTypes.bool
 };
 
 module.exports = Button;

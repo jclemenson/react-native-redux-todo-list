@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
   },
   completed: {
     textDecorationLine: 'line-through',
+    color: '#888',
   }
 });
 
